@@ -1,9 +1,14 @@
 body {
+   background-image: url("https://i.ytimg.com/vi/3REIkfB0lhA/maxresdefault.jpg");
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover; 
+   background-position: center;
    Position: Absolute;
    left: 0px;
    text-align: center;
    font-family: 'Raleway', sans-serif;
-   fon-size: 30px;
+   font-size: 30px;
    
 }
 
@@ -11,12 +16,12 @@ body {
    Position: Absolute;
    left: 0px;
    text-align: center;
-   font-family: 'Raleway', sans-serif;
+   font-family: 'Open Sans', sans-serif;
    font-size: 60px;
 }
 #time {
    Position: absolute;
-   left: 850px;
-   top: 400px;
-}
-      
+   left: 650px;
+   top: 300px;
+   color: white;
+} 
