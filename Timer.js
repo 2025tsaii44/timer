@@ -12,11 +12,13 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
-    }, 1000);
+    }, 1300);
 }
 
+var inputtime = prompt("Please enter desired time in minutes:", "90");
+
 window.onload = function () {
-    var fiveMinutes = 60 * 120,
+    var fiveMinutes = 60 * inputtime,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
 };
