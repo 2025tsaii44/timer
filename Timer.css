@@ -15,7 +15,8 @@ body {
    fon-size: 30px;
 }
 #time {
-   margin: auto;
-   
+   Position: absolute;
+   left: 850px;
+   top: 400px;
 }
       
