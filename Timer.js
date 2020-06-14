@@ -1,3 +1,16 @@
+function hide () {
+
+    var pauseit = document.getElementById("time")
+   
+
+    alert("helooooo?")
+    
+    pauseit.style.display = "block"
+    document.getElementById("herewego").style.display = "block"
+}
+
+var timer;
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -21,4 +34,26 @@ window.onload = function () {
     var fiveMinutes = 60 * inputtime,
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
+    hide();
 };
+
+
+
+
+
+function pause () {
+
+    clearTimeout(timer);
+
+   
+
+    var pauseit = document.querySelector('#time');
+   
+
+    pauseit.style.display = "block"
+    
+
+    
+
+
+}
