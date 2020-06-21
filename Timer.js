@@ -25,7 +25,7 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
-    }, 1300);
+    }, 1000);
 }
 
 var inputtime = prompt("Please enter desired time in minutes:", "90");
