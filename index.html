@@ -4,16 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
-    <link rel="stylesheet" href="Timer.css"> 
+    <link rel="stylesheet" href="https://use.typekit.net/frg3syd.css">
+    <link rel="stylesheet" href="main.css"> 
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
-<body>
-    <div id="box">
-        <div id="time" onclick="pause()">
-            5:00
-        <div>
-             
-    </div>
-    <div id="herewego">
-    <div>  
-<script src="Timer.js"></script>
-</body></html>
+<body onload="setHeight()">
+    <main>
+        <section>
+            <div id="test"></div>
+            <div class="main-wrapper">
+                <div class="main-navbar-wrapper">
+
+                </div>
+                <div class="main-landing-section-wrapper">
+
+                    <div class="title-display">
+                        <div class="title-cont">
+                            <div>Slim, efficient, fast timer right in your browser.
+                                <p>Quick and reliable timer, countdown, and stopwatch. Easy to use, intuitive, clean, and efficient.</p>    
+                                <button class="start-timist">
+                                    <div id="start-timist-text">Start Timist</div>
+                                    <div class="loader"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-display">
+                        <div class="image-cont">
+                            <img id="woman-jogging" src="/images/SVGS/pixeltrue-jogging.svg" alt="pixeltrue-jogging">
+                    </div>
+
+                </div>
+
+                <div class="timer-display-main-wrapper">
+
+                    <div class="select-type-timer-container">
+                        <div>
+                            <h1 id="stop-watch">STOPWATCH</h1>
+                        </div>
+                        <div>
+                            <h1 id="count-down">COUNTDOWN</h1>
+                        </div>
+                        <div>
+                            <h1 id="alarm">ALARM</h1>
+                        </div>
+                    </div>
+
+                    <div id="timerContainer">
+                        <div class="timer" onclick="startTimer()">Start Timer!</div>
+                        <div class="startTimer reset" onclick="startTimer()" >
+                            <i class="fas fa-play"></i>
+                          </div>
+                        <div class="pauseTimer reset" onclick="pauseTimer()" >
+                            <i class="fas fa-pause"></i>
+                          </div>
+                        <div class="resetTimer reset" onclick="resetTimer()">Reset</div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </section>
+    </main>
+</body>
+<script src="main.js"></script>
+<script src="/Timers/stopwatch.js"></script>
+</html>
