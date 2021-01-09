@@ -17,6 +17,45 @@ function setDefaults () {
 }
 setDefaults();
 
+
+// NAV
+document.getElementById('aboutHeaderCont').addEventListener('mouseenter', dropdownnav)
+document.getElementById('aboutHeaderCont').addEventListener('mouseleave', pullupnav)
+
+document.getElementById('resourcesHeaderCont').addEventListener('mouseenter', dropdownnav)
+document.getElementById('resourcesHeaderCont').addEventListener('mouseleave', pullupnav)
+
+document.getElementById('helpHeaderCont').addEventListener('mouseenter', dropdownnav)
+document.getElementById('helpHeaderCont').addEventListener('mouseleave', pullupnav)
+
+document.getElementById('giveHeaderCont').addEventListener('mouseenter', dropdownnav)
+document.getElementById('giveHeaderCont').addEventListener('mouseleave', pullupnav)
+
+function dropdownnav(string) {
+    var subjects = this.children;
+    //console.log(this)
+
+    for(i = 0; i < subjects.length; i++) {
+        if (i == 1) {var topofNearest = parseInt(subjects[(i - 1)].style.top); var topCalc = (topofNearest + 30) + 'px'}
+        else {var topCalc = '50px'};
+
+
+
+        subjects[i].style.opacity = '1'; subjects[i].style.top = topCalc
+    }
+}
+
+function pullupnav () {
+    var subjects = this.children;
+    //console.log(this)
+
+    for(i = 0; i < subjects.length; i++) {
+
+        subjects[i].style.opacity = null; subjects[i].style.top = null
+    }
+}
+
+
 function animateStartTimist () {
     document.getElementById('start-timist-text').style.marginLeft = '-5px'
     document.getElementById('start-timist-text').style.opacity = '0'

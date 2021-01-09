@@ -59,17 +59,17 @@ body {
    font-family: quasimoda, sans-serif;
    font-weight: 600;
 }
-.about-header-nav {
-   grid-area: About;
+.about-header-nav:hover {
+   color: #9c8c74;
+} 
+.resources-header-nav:hover {
+   color: #9c8c74;
 }
-.resources-header-nav {
-   grid-area: Resources;
+.help-header-nav:hover {
+   color: #9c8c74;
 }
-.help-header-nav {
-   grid-area: Help;
-}
-.give-header-nav {
-   grid-area: Give;
+.give-header-nav:hover {
+   color: #9c8c74;
 }
 .join-header-nav {
    grid-area: Join;
@@ -81,13 +81,46 @@ body {
 } 
 .join-header-nav:hover {   box-shadow: 0px 4px 0px   rgb(206, 192, 172); transform: translateY(-4.5px);}
 .join-header-nav:active {box-shadow: none;  transform: translateY(0px);}
+
 .navheaders {
    font-family: quasimoda, sans-serif;
    transition: ease 0.2s;
+   list-style-type: none;
 }
 .navheaders:hover {
    cursor: pointer;
-   color: rgb(128, 115, 98); 
+}
+.header-nav-conts {
+   position: relative;
+   text-align: center;
+
+   display: grid;
+   place-items: center;
+
+   height: 100%;
+
+   padding-bottom: 20px;
+   margin-top: 20px;
+}
+#aboutHeaderCont {
+   grid-area: About;
+}
+#resourcesHeaderCont {
+   grid-area: Resources;
+}
+#helpHeaderCont {
+   grid-area: Help;
+}
+#giveHeaderCont {
+   grid-area: Give;
+}
+.main-navbar-wrapper > div > li {
+   position: absolute;
+   top: 20px;
+   opacity: 0;
+}
+.main-navbar-wrapper > div > li:hover {
+   color: #9c8c74;
 }
 
 
