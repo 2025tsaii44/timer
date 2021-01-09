@@ -1,5 +1,6 @@
 body {
    scroll-behavior: smooth;
+   background-color: rgb(235, 225, 210);
 }
 #test {
    position: absolute;
@@ -23,11 +24,11 @@ body {
    left: 0;
    top: 0;
 
-   width: 100%;
+   width: 100%;    
    height: 100vh;
    max-height: 1000px;
 
-   background-color: rgb(235, 221, 204);
+   background-color: rgb(235, 225, 210);
 }
 .main-navbar-wrapper {
    position: absolute;
@@ -35,21 +36,68 @@ body {
    left: 0px;
    right: 0px;
    bottom: 0px;
-   width: calc(100% - 0px);
+   width: calc(100% - 0px); max-width: 1800px;
    height:  calc(90px);
    background-color: rgb(235, 225, 210);
+   z-index: 2;
 
-   display: grid;
-   grid-template-columns: repeat(8, 1fr);
-   grid-template-rows: 1fr;
+   display: grid; place-items: center;
+   grid-template-columns: 190px repeat(7, 1fr);
+   grid-template-rows: 30px 60px;
+
+   grid-template-areas: 
+   'icon1 spe1 About1 Resources1 1Help1 Gi2ve sp2e2 Joi2n' 
+   'icon spe About Resources Help Give spe2 Join';
 }
+#clockIcon {
+   margin-left: 50px;
+   grid-area: icon;
+}
+#clockIconTimistTextLabel {
+   margin-left: 220px;
+   grid-area: icon;
+   font-family: quasimoda, sans-serif;
+   font-weight: 600;
+}
+.about-header-nav {
+   grid-area: About;
+}
+.resources-header-nav {
+   grid-area: Resources;
+}
+.help-header-nav {
+   grid-area: Help;
+}
+.give-header-nav {
+   grid-area: Give;
+}
+.join-header-nav {
+   grid-area: Join;
+
+   padding: 10px 25px 10px 25px;
+
+   background-color: rgb(228, 213, 192);
+   border-radius: 7px;
+} 
+.join-header-nav:hover {   box-shadow: 0px 4px 0px   rgb(206, 192, 172); transform: translateY(-4.5px);}
+.join-header-nav:active {box-shadow: none;  transform: translateY(0px);}
+.navheaders {
+   font-family: quasimoda, sans-serif;
+   transition: ease 0.2s;
+}
+.navheaders:hover {
+   cursor: pointer;
+   color: rgb(128, 115, 98); 
+}
+
+
 .main-landing-section-wrapper {
    position: absolute;
    top: 90px;
    left: 0px;
    right: 0px;
    bottom: 00px;
-   width: calc(100% - 0px);
+   width: calc(100% - 0px); max-width: 1800px;
    height:  calc(100% - 90px);
    background-color: rgb(236, 225, 210);
    display: grid;
@@ -174,6 +222,11 @@ body {
    width: 100%;
    height: 100%;
 }
+#woman-leaning-hourglass {
+   display: none;
+   width: 100%;
+   height: 100%;
+}
 
 
 
@@ -190,6 +243,12 @@ body {
    height: 100vh;
 
    background-color: rgb(236 224 210);
+}
+@media screen and (min-width: 1800px) {
+   .timer-display-main-wrapper {
+      left: 50%;
+      margin-left: -840px;
+   }
 }
 
 
@@ -215,7 +274,7 @@ body {
 }
 .select-type-timer-container > div > h1:hover {
    cursor: pointer;
-   color: rgb(131, 121, 106);
+   color: rgb(150, 140, 125);
 }
 #stop-watch {
    color: rgb(131, 121, 106);
@@ -258,5 +317,81 @@ body {
  .reset {
    color: white;
  }
- 
+ #countDownContainer {
 
+   font-family: rig-shaded-bold-face, sans-serif;
+   font-weight: 300;
+
+   position: absolute;
+   width: 700px;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+
+   min-height: 160px;
+   border-top:0px;
+
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+
+   place-items: center;
+
+   display: none;
+ }
+ #count-down-timer {
+    display: none;
+ }
+ .start-Countdown {
+   grid-area: 1 / 1 / 2 / 4; 
+   font-size: 54px;
+   transition: ease 0.3s;
+ }
+ 
+/*
+ @media (prefers-color-scheme: dark) {
+   .main-landing-section-wrapper, .main-navbar-wrapper, .timer-display-main-wrapper, .main-wrapper, body {
+      background-color: rgb(97 89 77);
+   }
+   .title-cont > div, .navheaders, #clockIconTimistTextLabel {
+      color: #9e9b87;
+   }
+   .join-header-nav, .start-timist {
+      background-color: rgb(119 108 92);
+   }
+   #main-FILL-FILL {
+      fill: #a9a695 !important;
+   }
+   #woman-leaning-hourglass {
+      display: block;
+   }
+   #woman-jogging {
+      display: none;
+   }
+ }
+
+ @media screen and (max-width: 1290px) {
+   #woman-leaning-hourglass {
+      display: none;
+   }
+   #woman-jogging {
+      display: none;
+   }
+   .main-landing-section-wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      place-items: center;
+   }
+   .title-display {
+      grid-area: auto;
+      text-align: center;
+   }
+   .title-cont {
+      text-align: center;
+      margin: auto;
+   }
+   .image-display {
+      display: none;
+   }
+ }
+ */

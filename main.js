@@ -28,7 +28,7 @@ function animateStartTimist () {
 
 
 
-    setTimeout(startTimist, 600)
+    setTimeout(startTimist, 400)
 }
 
 function startTimist () {
@@ -44,6 +44,84 @@ function startTimist () {
     timerSection.scrollIntoView({behavior: 'smooth' });
 
     timerSection.style.transition = 'ease-in 0.4s'
-    timerSection.style.backgroundColor = 'rgb(228, 213, 192)'
+    //timerSection.style.backgroundColor = 'rgb(228, 213, 192)'
 }
 
+for (i = 0; i < document.getElementsByClassName('typesWords').length; i++) {
+    //console.log(document.getElementsByClassName('typesWords')[i])
+    document.getElementsByClassName('typesWords')[i].addEventListener('click', changeTypeTimer)
+}
+
+
+function changeTypeTimer() {
+    var typesWords = document.getElementsByClassName('typesWords')
+    for (i = 0; i < typesWords.length; i++) {
+        if (window.getComputedStyle(typesWords[i]).getPropertyValue('color') == 'rgb(131, 121, 106)') {
+            console.log(typesWords[i])
+            var word = typesWords[i]
+            var colored = word.innerHTML.toLowerCase()
+        }
+    }
+    //console.log(this)
+
+    var typeAlready = colored;
+    var typeToGo = this.classList[1]
+
+    var typeAlreadyNum = parseInt(word.classList[1])
+    var typeToGoNum = parseInt(this.classList[0])
+
+    switch (typeToGo) {
+        case 'stopwatch':
+            if (typeAlready == 'stopwatch') {
+                return;
+            } else {
+                if (typeToGoNum> typeAlreadyNum) {
+                    var animationToDo = 'whooshNext';
+                } else {
+                    var animationToDo = 'whooshPrev';
+                }
+                word.style.color = 'rgb(210, 196, 179)'
+                this.style.color = 'rgb(131, 121, 106)'
+                document.getElementById('timerContainer').style.display = null
+                document.getElementById('countDownContainer').style.display = 'none'
+            }
+        break;
+        case 'countdown':
+            if (typeAlready == 'countdown') {
+                return;
+            } else {
+                if (typeToGoNum> typeAlreadyNum) {
+                    var animationToDo = 'whooshNext';
+                } else {
+                    var animationToDo = 'whooshPrev';
+                }
+                word.style.color = 'rgb(210, 196, 179)'
+                this.style.color = 'rgb(131, 121, 106)'
+                document.getElementById('timerContainer').style.display = 'none'
+                document.getElementById('countDownContainer').style.display = 'grid'
+            }
+        break;
+        case 'alarm':
+            if (typeAlready == 'alarm') {
+                return;
+            } else {
+                if (typeToGoNum> typeAlreadyNum) {
+                    var animationToDo = 'whooshNext';
+                } else {
+                    var animationToDo = 'whooshPrev';
+                }
+                word.style.color = 'rgb(210, 196, 179)'
+                this.style.color = 'rgb(131, 121, 106)'
+                document.getElementById('timerContainer').style.display = 'none'
+                document.getElementById('countDownContainer').style.display = 'grid'
+                
+                if (document.getElementsByClassName('simply-word').length != 0) {
+                    //console.log(document.getElementsByClassName('simply-word'))
+                    return;
+                } else {
+                    startcountdown();
+                }
+            }
+        break;
+    }
+}

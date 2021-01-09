@@ -1,6 +1,8 @@
 var startTimerButton = document.querySelector('.startTimer');
 var pauseTimerButton = document.querySelector('.pauseTimer');
 var timerDisplay = document.querySelector('.timer');
+timerDisplay.style.color = "rgb(101 89 74)";
+
 var startTime;
 var updatedTime;
 var difference;
@@ -22,7 +24,8 @@ function startTimer(){
     startTimerButton.style.cursor = "auto";
     pauseTimerButton.style.cursor = "pointer";
 
-    timerDisplay.style.color = "rgb(60 53 44)";
+    timerDisplay.style.color = "rgb(101 89 74)";
+    //console.log('s')
   }
 }
 function pauseTimer(){
@@ -52,6 +55,7 @@ function resetTimer(){
   running = 0;
   timerDisplay.innerHTML = 'Start Timer!';
   timerDisplay.style.color = "rgb(210 196 179)";
+  //console.log(timerDisplay.style.color)
   timerDisplay.style.cursor = "pointer";
   startTimerButton.classList.remove('lighter');
   pauseTimerButton.classList.remove('lighter');
