@@ -1,0 +1,104 @@
+body {
+    overflow-x: hidden;
+}
+
+.main-navbar-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: calc(100% - 0px); max-width: 1800px;
+    height:  calc(90px);
+    background-color: rgb(235, 225, 210);
+    z-index: 2;
+ 
+    display: grid; place-items: center;
+    grid-template-columns: 190px repeat(7, 1fr);
+    grid-template-rows: 30px 60px;
+ 
+    grid-template-areas: 
+    'icon1 spe1 About1 Resources1 1Help1 Gi2ve sp2e2 Joi2n' 
+    'icon spe About Resources Help Give spe2 Join';
+ }
+ #clockIcon {
+    margin-left: 50px;
+    grid-area: icon;
+ }
+ #clockIconTimistTextLabel {
+    margin-left: 220px;
+    grid-area: icon;
+    font-family: quasimoda, sans-serif;
+    font-weight: 600;
+ }
+ .about-header-nav:hover {
+    color: #9c8c74;
+ } 
+ .resources-header-nav:hover {
+    color: #9c8c74;
+ }
+ .help-header-nav:hover {
+    color: #9c8c74;
+ }
+ .give-header-nav:hover {
+    color: #9c8c74;
+ }
+ .join-header-nav {
+    grid-area: Join;
+ 
+    padding: 10px 25px 10px 25px;
+ 
+    background-color: rgb(228, 213, 192);
+    border-radius: 7px;
+ } 
+ .join-header-nav:hover {   box-shadow: 0px 4px 0px   rgb(206, 192, 172); transform: translateY(-4.5px);}
+ .join-header-nav:active {box-shadow: none;  transform: translateY(0px);}
+ 
+ .navheaders {
+    font-family: quasimoda, sans-serif;
+    transition: ease 0.2s;
+    list-style-type: none;
+ }
+ .navheaders:hover {
+    cursor: pointer;
+ }
+ .header-nav-conts {
+    position: relative;
+    text-align: center;
+ 
+    display: grid;
+    place-items: center;
+ 
+    height: 100%;
+ 
+    padding-bottom: 20px;
+    margin-top: 20px;
+ }
+ #aboutHeaderCont {
+    grid-area: About;
+ }
+ #resourcesHeaderCont {
+    grid-area: Resources;
+ }
+ #helpHeaderCont {
+    grid-area: Help;
+ }
+ #giveHeaderCont {
+    grid-area: Give;
+ }
+ .main-navbar-wrapper > div > li {
+    position: absolute;
+    top: 20px;
+    opacity: 0;
+ }
+ .main-navbar-wrapper > div > li:hover {
+    color: #9c8c74;
+ }
+ @keyframes skewslideAway {
+    from {transform: skew(0deg); opacity: 1;}
+    to {transform: skew(-10.5deg); left: -180px; opacity: 0;}
+ }
+ @keyframes skewslideIn {
+    from {transform: skew(-10.5deg);  left: 180px; opacity: 0;}
+    to {transform: skew(0deg); opacity: 1;}
+ }
